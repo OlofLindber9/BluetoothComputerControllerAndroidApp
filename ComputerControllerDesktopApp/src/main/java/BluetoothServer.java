@@ -11,8 +11,8 @@ import java.io.InputStreamReader;
 
 public class BluetoothServer {
     // Original UUID with hyphens (36 characters)
-    // Well-known SPP UUID (must match the UUID on the Android client)
-    private static final String SPP_UUID = "cdc3c10c-058a-4e50-a724-cb9ccb53f385";
+    // UUID (must match the UUID on the Android client)
+    private static final String SPP_UUID = "00000000-AAAA-1111-BBBB-222222222222";
 
     // Remove hyphens to conform to the 32-character hexadecimal format expected by javax.bluetooth.UUID
     private static String sppUuidWithoutHyphens = SPP_UUID.replace("-", "");
