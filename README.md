@@ -3,10 +3,6 @@
 ## Description
 This project enables a user to control the mouse on a Windows desktop using an Android device via Bluetooth. The application consists of two parts: an Android app and a Java-based Windows service.
 
-## Features
-- Control mouse movements and MOUSE1 from an Android device.
-- Connect to a Windows computer via Bluetooth.
-
 ## Prerequisites
 ### For the Android App:
 - Android Studio
