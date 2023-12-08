@@ -24,16 +24,17 @@ This project enables a user to control the mouse on a Windows desktop using an A
 4. Run the project in Android Studio, and the app should install on your connected device.
 
 ### Windows Service:
-1. Download the JAR file  ```ComputerControllerDesktopApp.jar ```
-2. In commandline the JAR file can be run with the command:
-    ```java -jar C:pathtofile.jar```
-   where “pathtofile” is the path of the JAR file
+1. Clone the repository to your local machine.
+2. Navigate to the directory containing the Windows service code.
+3. Compile the Java code. You can use the following command:
+   ```shell
+   javac BluetoothServer.java
 
 ##Usage
 ###Setting up the Bluetooth Connection:
 1. Pair your Android device with your Windows computer via Bluetooth.
-2. Run the  ensure Bluetooth is enabled on both devices. Note that the          Open the app on your Android device and
+2. Run the JAR file ```ComputerControllerDesktopApp.jar ``` in commandline, ensure Bluetooth is enabled on both devices.
+3. Open the app on your Android device. If everything is working the commandline should print out ```Client Connected...```
 ##Using the App:
-1. Once the app is open, it will automatically try to connect to the Windows service.
-U2. se the touchpad area on the app to control the mouse cursor on the Windows screen.
-3. The 'Click' button can be used to simulate mouse clicks.
+1. Use the touchpad area on the app to control the mouse cursor on the Windows screen.
+2. The 'Click' button can be used to simulate mouse clicks.
