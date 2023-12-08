@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), BluetoothService.BluetoothConnectionLi
         bluetoothService.listener = this
 
 
-        val deviceAddress = "00:1A:7D:DA:71:15" // Replace with your Windows computer's Bluetooth MAC address
+        val deviceAddress = "00:AA:11:BB:22:CC" // Replace with your Windows computer's Bluetooth MAC address
         bluetoothService.connectToDevice(deviceAddress)
 
         // Initialize android widgets
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), BluetoothService.BluetoothConnectionLi
                     // User started touching the screen - we could use this to simulate mouse down (click and hold)
                     lastX = event.x
                     lastY = event.y
-                    Log.d("Finger Dragged DOWN", "Debug message")
+                    Log.d("Finger DOWN", "Debug message")
                 }
                 MotionEvent.ACTION_MOVE -> {
                     // User is dragging the finger on the screen
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), BluetoothService.BluetoothConnectionLi
                 }
                 MotionEvent.ACTION_UP -> {
                     // User lifted the finger - we could use this to simulate mouse up (release click)
-                    Log.d("Finger Dragged UP", "Debug message")
+                    Log.d("Finger UP", "Debug message")
                 }
             }
             true
@@ -100,7 +100,6 @@ class MainActivity : AppCompatActivity(), BluetoothService.BluetoothConnectionLi
         }
     }
 
-    // In your Activity
     private val REQUEST_BLUETOOTH_SCAN = 101
 
     private fun checkBluetoothPermissions() {
@@ -130,7 +129,6 @@ class MainActivity : AppCompatActivity(), BluetoothService.BluetoothConnectionLi
             if (grantResults.isNotEmpty() && grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
                 // All required permissions were granted
             } else {
-                // Some permissions were denied. Handle this case appropriately.
             }
         }
     }
