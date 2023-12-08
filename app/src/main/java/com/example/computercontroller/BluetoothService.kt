@@ -47,16 +47,13 @@ class BluetoothService(private val activity: Activity) {
         }
 
         override fun run() {
-            // Cancel discovery because it otherwise slows down the connection.
             bluetoothAdapter?.cancelDiscovery()
 
             mmSocket?.let { socket ->
-                // Connect to the remote device through the socket. This call blocks
-                // until it succeeds or throws an exception.
+                // Connect to the remote device through the socket.
                 socket.connect()
 
-                // The connection attempt succeeded. Perform work associated with
-                // the connection in a separate thread.
+                // Perform work associated with the connection in a separate thread.
                 manageMyConnectedSocket(socket)
             }
         }
@@ -73,16 +70,12 @@ class BluetoothService(private val activity: Activity) {
 
     private fun manageMyConnectedSocket(socket: BluetoothSocket) {
         // Pass the connected socket to a separate thread responsible for communication
-        // Implement your data transmission logic here
-
         listener?.onBluetoothConnected(socket)
     }
 
     companion object {
         private const val TAG = "BluetoothService"
         private const val REQUEST_ENABLE_BT = 1
-        private val MY_UUID: UUID = UUID.fromString("cdc3c10c-058a-4e50-a724-cb9ccb53f385") // Replace with your own UUID
+        private val MY_UUID: UUID = UUID.fromString("00000000-AAAA-1111-BBBB-222222222222") // Replace with your own UUID
     }
 }
-
-//cdc3c10c-058a-4e50-a724-cb9ccb53f385
